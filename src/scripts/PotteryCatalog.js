@@ -11,10 +11,12 @@ export const toSellOrNotToSell = (firedPottery) => {
         sellablePottery.push(firedPottery)
     }
 
-
     return sellablePottery
+
 }
 
 export function usePottery() {
+
   return structuredClone(sellablePottery)
+
 }

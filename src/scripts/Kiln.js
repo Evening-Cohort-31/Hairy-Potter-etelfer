@@ -1,4 +1,5 @@
 export const firePottery = (potteryObject, kilnTemp) => {
+  
     const firedPottery = {...potteryObject}
     
     if (kilnTemp >= 2200){

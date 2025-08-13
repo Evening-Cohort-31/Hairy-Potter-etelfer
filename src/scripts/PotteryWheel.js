@@ -7,8 +7,10 @@ let potteryObject = {
     weight: potteryWeight,
     height: potteryHeight,
     id: potteryId 
-
 }
+
 potteryId++
+
 return potteryObject
+
 }
