@@ -120,12 +120,26 @@ In the `main.js` module, invoke the `PotteryList` component function. Take its r
 > 🧨 Before you click the "Assessment Complete" button on the Learning Platform, add your answers below for each question and make a commit. It is your option to request a face-to-face meeting with a coach for a vocabulary review.
 
 1. Explain how you got the HTML, with the correct data, displayed in the browser?
-   > Your answer here
+
+   > I defined a function called potteryList. When defining the function I first had it create a variable that would be a string of HTML. Then I created a for of loop that would iterate over each object in the array of sellable pottery that I would use as an argument when invoking the function. I set the parameter as usePottery because this is a function that when invoked returns the deep copy of the array of sellable objects that I had already created using a different function in a separate module. After each object in the array iterates through the for of loop, the HTML string that is generated is added to the variable I initially created which I had labeled potteryHTML. Then, in the main.js module, I created a variable named sellablePottery with the value set as the invocation of the usePottery function. I then created another variable named potteryHTML with its value set as the invocation of the potteryList function using the sellablePottery array that I just defined as the argument. When this ran, it generated the HTML string needed to display on the DOM. In order to do this, I used the document.querySelector('.potteryList').innerHTML = potteryHTML line of code to select the article ‘potteryList’ that I had created and insert it into the inner HTML of the browser in order for it to be displayed.
+
 2. In the **PotteryList** module, when you iterate your pottery, you need to show the evidence of what the **weight** property's value is for the 2nd piece of pottery. Use [Loom](https://www.loom.com/) to record your browser window with the developer tools open and show those values.
-   > Paste your video's public URL here
+
+   (https://www.loom.com/share/546e363a473f49af8392f852c0b41c49?sid=fba3bf44-614b-4fe4-8004-7214b93ba600)
+
 3. The **PotteryWheel** module has a single function named `makePottery`. Why doesn't that module have all of the other code in it?
-   > Your answer here
+
+That is the first module that is defining the function being used to make all of the initial pottery objects. We use different modules for each of the other sections of code because they all have a different purpose and it would get confusing to have it all in one module. Modularizing helps to keep code clean and make it easy to understand what each modules purpose is in order to refer back to it and explain to other developers if in the future that is needed. We also put a lot of the other code into main.js because that is where we are invoking the functions that are individually defined in their separate modules in order to see it all being invoked in one place, basically where we create the objects and see the return of all of the previously defined functions.
+
 4. The pottery shop has learned that there is a set of customers that are willing to buy cracked pottery at a discounted price of $2.50. That means that the cracked pottery should now be displayed in the catalog. Explain the changes that this new business strategy would cause to your algorithm.
-   > Your answer here
+
+ This would mean that I need to go back into the potteryCatalog module and add another else if statement that would state that if firePottery.fired !== true then the firedPottery.price === 2.50 and then would push that into the sellable pottery array as well. 
+
+      else if (firedPottery.fired !== true) {
+        firedPottery.price = 2.50
+        sellablePottery.push(firedPottery)
+    }
+
 5. In the **Kiln** module, you have a `firePottery()` function. You need to demonstrate how to use the debugger to verify the values of the parameters for that function when your code runs. Use [Loom](https://www.loom.com/) to record your browser window with the developer tools open and show those values.
-   > Paste your video's public URL here
+
+   https://www.loom.com/share/c3371eef2bb34c48988a6c2195436f35?sid=ac32b3f0-9a9d-436d-96f8-4371580006b5
