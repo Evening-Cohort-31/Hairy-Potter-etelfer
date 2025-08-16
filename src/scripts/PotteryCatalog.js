@@ -1,14 +1,19 @@
 let sellablePottery = []
 
-export const toSellOrNotToSell = (firedPottery) => {
+export const toSellOrNotToSell = (potteryObject) => {
 
-    if (firedPottery.weight >= 6 && firedPottery.fired === true) {
-        firedPottery.price = 40 
-        sellablePottery.push(firedPottery)
+    if (potteryObject.weight >= 6 && potteryObject.cracked !== true) {
+        potteryObject.price = 40 
+        sellablePottery.push(potteryObject)
     }
-    else if (firedPottery.weight < 6 && firedPottery.fired === true) {
-        firedPottery.price = 20
-        sellablePottery.push(firedPottery)
+    else if (potteryObject.weight < 6 && potteryObject.cracked !== true) {
+        potteryObject.price = 20
+        sellablePottery.push(potteryObject)
+    }
+
+    else if (potteryObject.cracked === true) {
+        potteryObject.price = 2.50
+        sellablePottery.push(potteryObject)
     }
 
     return sellablePottery

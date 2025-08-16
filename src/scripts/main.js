@@ -11,7 +11,7 @@ let mug = makePottery("Mug", 2, 7)
 let platter = makePottery("Platter", 6, 1)
 let bowl = makePottery("Bowl", 3, 4);
 let vase = makePottery("Vase", 8, 8);
-let cup = makePottery("Cup", 1, 3);
+let cup = makePottery("Cup", 2, 3);
 
 // console.log(mug)
 // console.log(platter)
